@@ -1,0 +1,9 @@
+{
+  "name": "aum-enterprises",
+  "version": "1.0.0",
+  "description": "ecommerce website for Aum Enterprises",
+  "main": "index.js",
+  "repository": "git@github.com:aum99/aum-enterprise.git",
+  "author": "Aum Battul",
+  "license": "MIT"
+}
