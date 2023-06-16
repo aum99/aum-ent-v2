@@ -8,12 +8,15 @@ import {
   SignInContainer,
   Header,
   Info,
-  InputBox,
   SignInButton,
   OrDivider,
   SignInGoogleButton,
   AlternateSpan,
   SignUp,
+  InputDiv,
+  InputLabel,
+  Input,
+  Form,
 } from "./sign-in.styles";
 
 const defaultFormFields = {
@@ -49,25 +52,31 @@ const SignIn = () => {
       <SignInContainer>
         <Header>Hi there!</Header>
         <Info>Login to explore our wide range of products</Info>
-        <form onSubmit={HandleSubmit}>
-          <InputBox
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Email"
-            onChange={HandleChange}
-            required
-          ></InputBox>
-          <InputBox
-            type="password"
-            name="password"
-            value={password}
-            onChange={HandleChange}
-            placeholder="Password"
-            required
-          ></InputBox>
+        <Form onSubmit={HandleSubmit}>
+          <InputDiv>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Email</InputLabel>
+          </InputDiv>
+          <InputDiv>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Password</InputLabel>
+          </InputDiv>
           <SignInButton type="submit">SIGN IN</SignInButton>
-        </form>
+        </Form>
         <OrDivider>OR</OrDivider>
         <SignInGoogleButton>GOOGLE SIGN IN</SignInGoogleButton>
         <AlternateSpan>

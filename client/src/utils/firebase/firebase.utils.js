@@ -57,18 +57,20 @@ export const getCollectionAndCategories = async () => {
 
 const auth = getAuth();
 
-export const createUserDoc = async (userAuth, additionalInfo = {}) => {
+export const createUserDoc = async (userAuth, additionalInfo) => {
   const userDoc = doc(db, "users", userAuth.uid);
   const userSnapShot = await getDoc(userDoc);
   if (!userSnapShot.exists()) {
     const { displayName, email, number } = userAuth;
     const createdAt = new Date();
+    const items = {};
     try {
       await setDoc(userDoc, {
         displayName,
         email,
         number,
         createdAt,
+        items,
         ...additionalInfo,
       });
     } catch (error) {

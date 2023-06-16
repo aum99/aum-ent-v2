@@ -21,12 +21,10 @@ import {
 export function* getSnapShotFromAuth(user, additionalInfo) {
   try {
     const userSnap = yield call(createUserDoc, user, additionalInfo);
-    console.log("heheh");
     if (userSnap) {
       yield put(signInSuccess({ id: userSnap.id, ...userSnap.data() }));
     }
   } catch (error) {
-    console.log("herherhehre");
     yield put(signInFailed(error));
   }
 }

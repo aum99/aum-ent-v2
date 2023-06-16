@@ -34,6 +34,8 @@ const Checkout = () => {
       data: { order },
     } = await axios.post("http://localhost:4000/api/checkout", {
       total,
+      user,
+      cartItems,
     });
     const options = {
       key,

@@ -8,10 +8,13 @@ import {
   SignUpContainer,
   Header,
   Info,
-  InputBox,
+  Form,
   SignUpButton,
   AlternateSpan,
   SignIn,
+  Input,
+  InputDiv,
+  InputLabel,
 } from "./sign-up.styles";
 
 const defaultFormFields = {
@@ -53,49 +56,64 @@ const SignUp = () => {
       <SignUpContainer>
         <Header>Create an account</Header>
         <Info>Get started with registering for your account</Info>
-        <form onSubmit={HandleSubmit}>
-          <InputBox
-            type="text"
-            name="name"
-            value={name}
-            placeholder="Name"
-            onChange={HandleChange}
-            required
-          ></InputBox>
-          <InputBox
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Email"
-            onChange={HandleChange}
-            required
-          ></InputBox>
-          <InputBox
-            type="number"
-            name="number"
-            value={number}
-            placeholder="Phone Number"
-            onChange={HandleChange}
-            required
-          ></InputBox>
-          <InputBox
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Password"
-            onChange={HandleChange}
-            required
-          ></InputBox>
-          <InputBox
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            placeholder="Confirm Password"
-            onChange={HandleChange}
-            required
-          ></InputBox>
+        <Form onSubmit={HandleSubmit}>
+          <InputDiv>
+            <Input
+              type="text"
+              name="name"
+              value={name}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Name</InputLabel>
+          </InputDiv>
+          <InputDiv>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Email</InputLabel>
+          </InputDiv>
+          <InputDiv>
+            <Input
+              type="number"
+              name="number"
+              value={number}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Number</InputLabel>
+          </InputDiv>
+          <InputDiv>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Password</InputLabel>
+          </InputDiv>
+          <InputDiv>
+            <Input
+              type="password"
+              name="confirmPassword"
+              value={confirmPassword}
+              autoComplete="off"
+              onChange={HandleChange}
+              required
+            ></Input>
+            <InputLabel>Confirm Password</InputLabel>
+          </InputDiv>
           <SignUpButton type="submit">Sign Up</SignUpButton>
-        </form>
+        </Form>
         <AlternateSpan>
           Already have an account? <SignIn to="/sign-in">Log in</SignIn>
         </AlternateSpan>
