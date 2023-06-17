@@ -10,6 +10,7 @@ import { selectCurrentUser } from "../../store/user/user.selector";
 import { signOutStart } from "../../store/user/user.action";
 
 import CartDropdown from "../../components/cart-dropdown/cart.component";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
 
 import {
   NavbarContainer,
@@ -67,8 +68,8 @@ const Navigation = () => {
             </NavLink>
           )}
 
-          <NavLink onClick={toggleCart}>
-            <i className="bx bx-cart-alt icon"></i>Cart
+          <NavLink>
+            <CartIcon />
           </NavLink>
           <NavMenu onClick={toggleMenu}>
             <i className="bx bx-menu"></i>

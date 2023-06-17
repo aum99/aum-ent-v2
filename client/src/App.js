@@ -1,6 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { motion } from "framer-motion";
 
 import Navigation from "./routes/navigation/navigation.component";
 import Home from "./routes/home/home.component";
@@ -13,41 +11,17 @@ import PaymentSuccess from "./components/payment-success/payment-success.compone
 import "./App.css";
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-    window.addEventListener("mousemove", mouseMove);
-    return () => {
-      window.addEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-    },
-  };
   return (
-    <Fragment>
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="products/*" element={<Products />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="sign-in" element={<SignIn />} />
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="paymentsuccess" element={<PaymentSuccess />} />
-        </Route>
-      </Routes>
-      <motion.div className="cursor" variants={variants} animate="default" />
-    </Fragment>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="products/*" element={<Products />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="sign-in" element={<SignIn />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="paymentsuccess" element={<PaymentSuccess />} />
+      </Route>
+    </Routes>
   );
 }
 

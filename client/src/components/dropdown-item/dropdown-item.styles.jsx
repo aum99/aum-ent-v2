@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const ItemContainer = styled.div`
   display: flex;
-  align-items: center;
+  width: 100%;
   margin: 10px;
 `;
 export const ImageContainer = styled.img`

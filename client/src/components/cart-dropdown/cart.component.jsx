@@ -12,6 +12,7 @@ import {
   CartDropdownContainer,
   ProductsContainer,
   CheckoutButton,
+  EmptyMessage,
 } from "./cart.styles";
 
 const CartDropdown = () => {
@@ -30,7 +31,7 @@ const CartDropdown = () => {
             <DropdownItem key={cartItem.id} item={cartItem}></DropdownItem>
           ))
         ) : (
-          <h1>Nothing in cart yet</h1>
+          <EmptyMessage>Nothing in cart yet</EmptyMessage>
         )}
       </ProductsContainer>
       <CheckoutButton to="/checkout" onClick={ToggleCart}>

@@ -20,9 +20,8 @@ export const ProductsContainer = styled.div`
   margin: 5px;
   height: 75%;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
-
   /* border: 1px solid black; */
   overflow: scroll;
 `;
@@ -37,4 +36,14 @@ export const CheckoutButton = styled(Link)`
   text-align: center;
   text-decoration: none;
   border-radius: 10px;
+`;
+
+export const EmptyMessage = styled.span`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-weight: 500;
 `;
