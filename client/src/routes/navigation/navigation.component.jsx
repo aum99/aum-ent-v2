@@ -53,9 +53,8 @@ const Navigation = () => {
         <NavLogo onClick={navigateToHome} />
         <NavLinksContainer>
           <NavLink to="/products">Products</NavLink>
-          <NavLink>Deals</NavLink>
-          <NavLink>Whats New</NavLink>
-          <NavLink>Delivery</NavLink>
+          <NavLink>About</NavLink>
+          <NavLink>Contact</NavLink>
         </NavLinksContainer>
         <NavbarCtaContainer>
           {currUser ? (
@@ -83,9 +82,8 @@ const Navigation = () => {
             <NavLink to="/products" onClick={toggleMenu}>
               Products
             </NavLink>
-            <NavLink>Deals</NavLink>
-            <NavLink>Whats New</NavLink>
-            <NavLink>Delivery</NavLink>
+            <NavLink>About</NavLink>
+            <NavLink>Contact</NavLink>
           </NavMenuBlock>
         </NavMenuContainer>
       ) : (

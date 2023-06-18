@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { signInStart } from "../../store/user/user.action";
+import { signInStart, googleSignInStart } from "../../store/user/user.action";
 
 import {
   Container,
@@ -36,6 +36,10 @@ const SignIn = () => {
   const HandleChange = (e) => {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
+  };
+
+  const HandleGoogleSignIn = async () => {
+    dispatch(googleSignInStart());
   };
 
   const HandleSubmit = async (e) => {
@@ -78,7 +82,9 @@ const SignIn = () => {
           <SignInButton type="submit">SIGN IN</SignInButton>
         </Form>
         <OrDivider>OR</OrDivider>
-        <SignInGoogleButton>GOOGLE SIGN IN</SignInGoogleButton>
+        <SignInGoogleButton onClick={HandleGoogleSignIn}>
+          GOOGLE SIGN IN
+        </SignInGoogleButton>
         <AlternateSpan>
           Do not have an accout?{" "}
           <SignUp to="/sign-up">Create an account</SignUp>

@@ -67,10 +67,10 @@ export function* signOut() {
 
 export function* signInWithGoogle() {
   try {
-    const { user } = yield* call(signInWithGooglePopUp);
-    yield* call(getSnapShotFromAuth, user);
+    const { user } = yield call(signInWithGooglePopUp);
+    yield call(getSnapShotFromAuth, user);
   } catch (error) {
-    yield* put(signInFailed(error));
+    yield put(signInFailed(error));
   }
 }
 

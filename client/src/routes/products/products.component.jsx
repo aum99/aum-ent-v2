@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // import SHOP_DATA from "../../shopData";
 // import { addCollectionsAndDocuments } from "../../utils/firebase/firebase.utils";

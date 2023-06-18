@@ -25,6 +25,7 @@ export const NavLogo = styled(Logo)`
 
 export const NavLinksContainer = styled.div`
   display: flex;
+  margin-left: 10%;
   justify-content: space-around;
   @media (max-width: 840px) {
     display: none;

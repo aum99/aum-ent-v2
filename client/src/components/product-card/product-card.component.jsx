@@ -15,7 +15,6 @@ import {
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems);
-  console.log(cartItems);
   const dispatch = useDispatch();
   const addProduct = () => dispatch(addCartItem(cartItems, product));
   return (

@@ -1,5 +1,5 @@
-import { Fragment } from "react";
 import { styled } from "styled-components";
+import { Fragment } from "react";
 
 export const CheckoutContainer = styled.div`
   display: flex;
@@ -45,15 +45,18 @@ export const Header = styled.span`
 `;
 
 export const InfoInput = styled.input`
-  width: 45%;
+  width: 46%;
   height: 40px;
   padding-left: 10px;
   margin: 5px;
   border: 1px solid black;
-  @media (max-width: 1080px) {
+  @media (max-width: 1345px) {
+    width: 45%;
+  }
+  @media (max-width: 1128px) {
     width: 100%;
     margin: 5px 15px;
-    height: 10%;
+    height: 80%;
   }
 `;
 
@@ -61,20 +64,20 @@ export const AddressInput = styled.input`
   width: 100%;
   height: 40px;
   padding-left: 10px;
-  margin: 5px 15px;
+  margin: 5px;
   border: 1px solid black;
-  @media (max-width: 1080px) {
+  @media (max-width: 1128px) {
     height: 10%;
+    margin: 5px 15px;
   }
 `;
 
-export const SubAddressContainer = styled.div`
+export const InputBoxContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
   justify-content: space-between;
   width: 100%;
-  margin: 0 10px;
 `;
 
 export const SubAddressInput = styled.input`
@@ -84,8 +87,9 @@ export const SubAddressInput = styled.input`
   margin: 0 5px;
   margin-top: 5px;
   border: 1px solid black;
-  @media (max-width: 1080px) {
-    height: 30%;
+  @media (max-width: 1128px) {
+    height: 15%;
+    margin: 5px 15px;
   }
 `;
 
@@ -95,4 +99,33 @@ export const CartTotal = styled.div`
   padding-top: 10px;
   text-align: end;
   font-weight: 900;
+`;
+
+export const CheckoutButton = styled.button`
+  background-color: #222;
+  border-radius: 1rem;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 10px 5px;
+  padding: 1rem;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+  width: 99%;
+  touch-action: manipulation;
+  &:hover,
+  :focus {
+    opacity: 0.75;
+  }
+`;
+
+export const FormContainer = styled.form`
+  width: 100%;
+  margin: 5px 15px;
 `;
