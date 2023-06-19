@@ -11,6 +11,7 @@ import { signOutStart } from "../../store/user/user.action";
 
 import CartDropdown from "../../components/cart-dropdown/cart.component";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
+import Footer from "../../components/footer/footer.component";
 
 import {
   NavbarContainer,
@@ -89,6 +90,7 @@ const Navigation = () => {
       ) : (
         <BodyContainer>
           <Outlet />
+          <Footer />
         </BodyContainer>
       )}
       {isCartOpen && <CartDropdown />}
