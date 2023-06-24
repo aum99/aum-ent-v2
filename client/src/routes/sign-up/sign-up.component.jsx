@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import { signUpStart } from "../../store/user/user.action";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import {
   Container,
@@ -29,6 +31,8 @@ const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { name, email, number, password, confirmPassword } = formFields;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isUser = useSelector(selectCurrentUser);
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
@@ -51,6 +55,12 @@ const SignUp = () => {
       alert("Failed to sign up, ", err.message);
     }
   };
+
+  useEffect(() => {
+    if (isUser) {
+      navigate("/profile");
+    }
+  }, [isUser]);
   return (
     <Container>
       <SignUpContainer>

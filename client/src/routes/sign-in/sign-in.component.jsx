@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { signInStart, googleSignInStart } from "../../store/user/user.action";
 
@@ -18,6 +18,8 @@ import {
   Input,
   Form,
 } from "./sign-in.styles";
+import { selectCurrentUser } from "../../store/user/user.selector";
+import { useNavigate } from "react-router-dom";
 
 const defaultFormFields = {
   email: "",
@@ -28,6 +30,8 @@ const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const dispatch = useDispatch();
+  const isUser = useSelector(selectCurrentUser);
+  const navigate = useNavigate();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -51,6 +55,12 @@ const SignIn = () => {
       alert("Failed to sign in user, ", err.message);
     }
   };
+
+  useEffect(() => {
+    if (isUser) {
+      navigate("/profile");
+    }
+  }, [isUser]);
   return (
     <Container>
       <SignInContainer>

@@ -35,10 +35,6 @@ const Navigation = () => {
     dispatch(toggleNavbar(!isMenu));
   };
 
-  const toggleCart = () => {
-    dispatch(setIsCartOpen(!isCartOpen));
-  };
-
   const navigate = useNavigate();
   const navigateToHome = useCallback(() => {
     navigate("/");

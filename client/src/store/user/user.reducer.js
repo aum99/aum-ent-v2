@@ -1,4 +1,5 @@
 import { USER_ACTION_TYPES } from "./user.types";
+import { useNavigate } from "react-router-dom";
 
 const INITIAL_STATE = {
   currentUser: null,
