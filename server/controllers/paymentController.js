@@ -58,7 +58,7 @@ export const paymentVerification = async (req, res) => {
       await updateDoc(userDoc, products);
     }
     res.redirect(
-      `https://aum-enterprises.netlify.app//paymentsuccess?reference=${razorpay_payment_id}`
+      `https://aum-enterprises.netlify.app/paymentsuccess?reference=${razorpay_payment_id}`
     );
   } else {
     res.status(400).json({

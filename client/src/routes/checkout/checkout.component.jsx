@@ -49,10 +49,10 @@ const Checkout = () => {
     try {
       const {
         data: { key },
-      } = await axios.get("https://aum-ent.onrender.com/getkey");
+      } = await axios.get("https://aum-ent.onrender.com/api/getkey");
       const {
         data: { order },
-      } = await axios.post("https://aum-ent.onrender.com/checkout", {
+      } = await axios.post("https://aum-ent.onrender.com/api/checkout", {
         total,
         user,
         cartItems,
