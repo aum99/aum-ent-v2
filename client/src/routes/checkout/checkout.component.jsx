@@ -46,41 +46,43 @@ const Checkout = () => {
 
   const HandleCheckout = async (e) => {
     e.preventDefault();
-    try {
-      const {
-        data: { key },
-      } = await axios.get("https://aum-ent.onrender.com/api/getkey");
-      const {
-        data: { order },
-      } = await axios.post("https://aum-ent.onrender.com/api/checkout", {
-        total,
-        user,
-        cartItems,
-      });
-      const options = {
-        key,
-        amount: order.amount,
-        name: "Aum Enterprises",
-        description: "Test Transaction",
-        image: "https://avatars.githubusercontent.com/u/93549019?v=4",
-        order_id: order.id,
-        callback_url: "https://aum-ent.onrender.com/api/paymentverification",
-        prefill: {
-          name: user ? fname + " " + lname : "Angel Buddy",
-          email: email,
-          contact: phone,
-        },
-        notes: {
-          address: "Razorpay Corporate Office",
-        },
-        theme: {
-          color: "#0F0F0F",
-        },
-      };
-      var razor = new window.Razorpay(options);
-      razor.open();
-    } catch (err) {
-      alert("There was an error connecting to the server");
+    if (user) {
+      try {
+        const {
+          data: { key },
+        } = await axios.get("https://aum-ent.onrender.com/api/getkey");
+        const {
+          data: { order },
+        } = await axios.post("https://aum-ent.onrender.com/api/checkout", {
+          total,
+          user,
+          cartItems,
+        });
+        const options = {
+          key,
+          amount: order.amount,
+          name: "Aum Enterprises",
+          description: "Test Transaction",
+          image: "https://avatars.githubusercontent.com/u/93549019?v=4",
+          order_id: order.id,
+          callback_url: "https://aum-ent.onrender.com/api/paymentverification",
+          prefill: {
+            name: user ? fname + " " + lname : "Angel Buddy",
+            email: email,
+            contact: phone,
+          },
+          notes: {
+            address: "Razorpay Corporate Office",
+          },
+          theme: {
+            color: "#0F0F0F",
+          },
+        };
+        var razor = new window.Razorpay(options);
+        razor.open();
+      } catch (err) {
+        alert("There was an error connecting to the server");
+      }
     }
   };
 
@@ -162,7 +164,7 @@ const Checkout = () => {
               required
             ></SubAddressInput>
           </InputBoxContainer>
-          <CheckoutButton>Checkout</CheckoutButton>
+          <CheckoutButton onClick={HandleCheckout}>Checkout</CheckoutButton>
         </FormContainer>
       </DeliveryInfoContainer>
     </CheckoutContainer>

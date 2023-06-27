@@ -1,4 +1,6 @@
 import { useSearchParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 import {
   SuccessContainer,
@@ -17,7 +19,20 @@ import {
 const PaymentSuccess = () => {
   const searchQuery = useSearchParams()[0];
   const referenceNum = searchQuery.get("reference");
-  return (
+  const [orderState, setOrderState] = useState(null);
+  const HandleCheck = async () => {
+    const {
+      data: { isValid },
+    } = await axios.get(
+      `https://aum-ent.onrender.com/api/checkRef?order_id=${referenceNum}`
+    );
+    setOrderState(isValid);
+    return isValid;
+  };
+  useEffect(() => {
+    HandleCheck();
+  }, []);
+  return orderState ? (
     <SuccessContainer>
       <Card>
         <Header>
@@ -63,6 +78,8 @@ const PaymentSuccess = () => {
         </Header>
       </Card>
     </SuccessContainer>
+  ) : (
+    <h1>cannot access</h1>
   );
 };
 

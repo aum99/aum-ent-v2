@@ -58,11 +58,24 @@ export const paymentVerification = async (req, res) => {
       await updateDoc(userDoc, products);
     }
     res.redirect(
-      `https://aum-enterprises.netlify.app/paymentsuccess?reference=${razorpay_payment_id}`
+      `https://aum-enterprises.netlify.app/paymentsuccess?reference=${razorpay_order_id}`
     );
   } else {
     res.status(400).json({
       success: false,
     });
   }
+};
+
+export const checkRef = async (req, res) => {
+  const { order_id } = req.query;
+  console.log(order_id);
+  let isValid = false;
+  try {
+    const ans = await instance.orders.fetch(order_id);
+    isValid = true;
+  } catch (err) {
+    isValid = false;
+  }
+  res.status(200).json({ isValid });
 };
