@@ -5,7 +5,7 @@ import GridItem from "../grid-item/grid-item.component";
 const categories = [
   {
     id: 1,
-    title: "Hats",
+    title: "Bolts & Nuts",
     imageUrl:
       "https://www.stockinitaly.com/wp-content/uploads/2019/03/bigstock-bolts-nuts-screws-54640064-e1446090357363.jpg",
     route: "products/bolts-nuts",
