@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { toggleNavbar } from "../../store/navbar/navbar.action";
 import { selectIsMenuOpen } from "../../store/navbar/navbar.selector";
-import { setIsCartOpen } from "../../store/cart/cart.action";
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { signOutStart } from "../../store/user/user.action";

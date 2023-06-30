@@ -47,7 +47,7 @@ export const Header = styled.p`
 export const Info = styled.p`
   margin: 20px;
   text-align: center;
-  font-size: small;
+  font-size: medium;
 `;
 
 export const SignInButton = styled.button`

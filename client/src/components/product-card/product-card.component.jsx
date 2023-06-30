@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
       <img src={imageUrl} alt={name} />
       <ProductInfo>
         <Name>{name}</Name>
-        <Price>{price}</Price>
+        <Price>Rs. {price}</Price>
       </ProductInfo>
       <ProductDescription>Lorem ipsum desc for prod</ProductDescription>
       <AddButton onClick={addProduct}>Add to Cart</AddButton>

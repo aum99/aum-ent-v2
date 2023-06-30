@@ -10,9 +10,8 @@ export const BannerContainer = styled.div`
   @media (max-width: 940px) {
     margin: 0 20px;
     width: auto;
-  }
-  @media (max-width: 940px) {
-    height: 450px;
+    filter: brightness(60%);
+    background-image: url("https://blog.thomasnet.com/hubfs/1MARCOMM/Blog/2018/May/Manufacturing%20Quality%20Control.jpg");
   }
 `;
 
@@ -24,6 +23,9 @@ export const TextContainer = styled.div`
   background-color: #adb5bd;
   justify-content: center;
   align-items: center;
+  @media (max-width: 940px) {
+    background-image: url("https://blog.thomasnet.com/hubfs/1MARCOMM/Blog/2018/May/Manufacturing%20Quality%20Control.jpg");
+  }
 `;
 
 export const TextBox = styled.div`

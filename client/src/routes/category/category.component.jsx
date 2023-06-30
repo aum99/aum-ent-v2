@@ -21,7 +21,9 @@ const Category = () => {
 
   return (
     <Fragment>
-      <HomeButton to="/products">&lt; Home</HomeButton>
+      <HomeButton to="/products">
+        <i class="bx bxs-chevron-left"></i> All Products
+      </HomeButton>
       <CategoryButtons />
       <ProductsContainer>
         {products.map((product) => (

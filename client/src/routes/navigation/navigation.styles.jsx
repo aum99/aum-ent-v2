@@ -8,7 +8,12 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid;
+  padding-top: 10px;
   padding-bottom: 15px;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: #fff;
 `;
 
 export const NavLogo = styled(Logo)`
@@ -45,7 +50,7 @@ export const NavMenuContainer = styled.div`
 
 export const NavLink = styled(Link)`
   margin: 0 20px;
-  font-size: medium;
+  font-size: larger;
   text-decoration: none;
   color: black;
   display: flex;

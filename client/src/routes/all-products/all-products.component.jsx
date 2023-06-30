@@ -8,7 +8,7 @@ import {
 import ProductCard from "../../components/product-card/product-card.component";
 import CategoryButtons from "../../components/category-buttons/category-buttons.component";
 
-import { ProductsContainer } from "./all-products.styles";
+import { ProductsContainer, MainContainer } from "./all-products.styles";
 import { Fragment } from "react";
 
 import Spinner from "../../components/spinner/spinner.component";
@@ -21,7 +21,7 @@ const AllProducts = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <Fragment>
+        <MainContainer>
           <CategoryButtons />
           <ProductsContainer>
             {Object.keys(categories).map((title) => {
@@ -31,7 +31,7 @@ const AllProducts = () => {
               ));
             })}
           </ProductsContainer>
-        </Fragment>
+        </MainContainer>
       )}
     </Fragment>
   );
