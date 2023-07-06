@@ -50,7 +50,7 @@ const Navigation = () => {
         <NavLinksContainer>
           <NavLink to="/products">Products</NavLink>
           <NavLink>About</NavLink>
-          <NavLink>Contact</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </NavLinksContainer>
         <NavbarCtaContainer>
           {currUser ? (
@@ -79,14 +79,16 @@ const Navigation = () => {
               Products
             </NavLink>
             <NavLink>About</NavLink>
-            <NavLink>Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </NavMenuBlock>
         </NavMenuContainer>
       ) : (
-        <BodyContainer>
-          <Outlet />
+        <Fragment>
+          <BodyContainer>
+            <Outlet />
+          </BodyContainer>
           <Footer />
-        </BodyContainer>
+        </Fragment>
       )}
       {isCartOpen && <CartDropdown />}
     </Fragment>

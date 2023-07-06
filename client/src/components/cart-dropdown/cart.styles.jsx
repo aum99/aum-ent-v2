@@ -13,7 +13,7 @@ export const CartDropdownContainer = styled.div`
   background-color: white;
   top: 90px;
   right: 90px;
-  z-index: 5;
+  z-index: 99;
 `;
 
 export const ProductsContainer = styled.div`

@@ -1,120 +1,87 @@
-import { Link } from "react-router-dom";
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const FooterContainer = styled.div`
   width: 100%;
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  background-color: #000;
   flex-direction: column;
   align-items: center;
   color: #fff;
   border-bottom: 5px solid #8d99ae;
 `;
 
-export const FooterLink = styled(Link)`
+export const NewsLetterContainer = styled.div`
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #212529;
+`;
+
+export const Header = styled.h1`
   margin: 0;
-  font-size: medium;
-  margin: 5px;
-  font-weight: 300;
-  text-decoration: none;
-  color: #fff;
+  margin-bottom: 20px;
 `;
 
-export const BrandHeader = styled.p`
-  font-size: larger;
-  font-weight: 700;
-  margin: 10px 0;
-  margin-top: 20px;
-`;
-
-export const Button = styled.button`
-  border: none;
-  background: none;
-  color: #8b8ba7;
-`;
-
-export const Description = styled.p`
-  font-size: x-large;
-  font-weight: 900;
-  margin: 10px 0;
-`;
-
-export const ContactForm = styled.form`
-  --timing: 0.3s;
-  --width-of-input: 300px;
-  --height-of-input: 40px;
-  --border-height: 2px;
-  --input-bg: #fff;
-  --border-color: #2f2ee9;
-  --border-radius: 30px;
-  --after-border-radius: 1px;
-  position: relative;
-  width: var(--width-of-input);
-  height: var(--height-of-input);
+export const InputGroup = styled.div`
   display: flex;
   align-items: center;
-  padding-inline: 0.8em;
-  border-radius: var(--border-radius);
-  transition: border-radius 0.5s ease;
-  background: var(--input-bg, #fff);
-  margin: 10px 0;
-  &::before {
-    content: "";
-    position: absolute;
-    background: var(--border-color);
-    transform: scaleX(0);
-    transform-origin: center;
-    width: 100%;
-    height: var(--border-height);
-    left: 0;
-    bottom: 0;
-    border-radius: 1px;
-    transition: transform var(--timing) ease;
-  }
-  &:focus-within {
-    border-radius: var(--after-border-radius);
-  }
-`;
-
-export const Svg = styled.svg`
-  width: 17px;
-  margin-top: 3px;
-`;
-
-export const ResetButton = styled.button`
-  border: none;
-  background: none;
-  opacity: 0;
-  visibility: hidden;
 `;
 
 export const Input = styled.input`
-  font-size: 0.9rem;
+  min-height: 48px;
+  max-width: 150px;
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #fff;
+  border-radius: 6px 0 0 6px;
   background-color: transparent;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-inline: 0.5em;
-  padding-block: 0.7em;
-  border: none;
-  &:focus {
+  &:focus,
+  :focus-visible {
+    border-color: #3898ec;
     outline: none;
   }
-  &:focus-within::before {
-    transform: scale(1);
+`;
+
+export const InputSubmit = styled.input`
+  min-height: 50px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: #5e5dcd;
   }
-  &:not(:placeholder-shown) ~ ${ResetButton} {
-    opacity: 1;
-    visibility: visible;
-  }
+`;
+
+export const SocialsContainer = styled.div`
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #000;
 `;
 
 export const LinksContainer = styled.div`
   display: flex;
-  margin: 10px 0;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 
-  justify-content: space-between;
+export const SocialLink = styled(Link)`
+  text-decoration: none;
+  font-size: larger;
+  color: white;
+  margin: 15px;
 `;

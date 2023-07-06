@@ -2,13 +2,14 @@ import { styled } from "styled-components";
 
 export const ProductCardContainer = styled.div`
   width: 270px;
-  margin: 8px;
-  margin-left: 15px;
+  margin: 10px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8px;
   border: 2px solid #adb5bd;
+
   img {
     width: 270px;
     height: 60%;

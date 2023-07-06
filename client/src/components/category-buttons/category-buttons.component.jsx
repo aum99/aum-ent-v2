@@ -13,7 +13,7 @@ const CategoryButtons = () => {
     <CategoryButtonsContainer>
       {Object.keys(categories).map((title) => (
         <CategoryButton to={`/products/${title}`} key={title}>
-          {title}
+          {title[0].toUpperCase() + title.slice(1)}
         </CategoryButton>
       ))}
     </CategoryButtonsContainer>

@@ -11,12 +11,26 @@ import {
   ProductDescription,
   AddButton,
 } from "./product-card.styles";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
-  const addProduct = () => dispatch(addCartItem(cartItems, product));
+
+  const addProduct = () => {
+    toast.success("Added to cart!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    dispatch(addCartItem(cartItems, product));
+  };
   return (
     <ProductCardContainer>
       <img src={imageUrl} alt={name} />

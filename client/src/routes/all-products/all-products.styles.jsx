@@ -9,9 +9,9 @@ export const MainContainer = styled.div`
 export const ProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  margin-top: 15px;
+  justify-content: space-evenly;
   @media (max-width: 1390px) {
-    justify-content: space-between;
   }
   @media (max-width: 595px) {
     display: flex;

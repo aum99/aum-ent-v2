@@ -8,6 +8,7 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid;
+  padding: 0 50px;
   padding-top: 10px;
   padding-bottom: 15px;
   position: sticky;
@@ -92,8 +93,9 @@ export const NavMenuBlock = styled.div`
 
 export const BodyContainer = styled.div`
   margin-top: 10px;
+  margin: 5px 80px;
   @media (max-width: 940px) {
-    margin-top: 0;
+    margin: 0;
     padding: 10px;
   }
 `;
