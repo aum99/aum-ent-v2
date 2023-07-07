@@ -8,9 +8,9 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid;
-  padding: 0 50px;
   padding-top: 10px;
   padding-bottom: 15px;
+  width: 100%;
   position: sticky;
   z-index: 10;
   top: 0;
@@ -96,6 +96,7 @@ export const BodyContainer = styled.div`
   margin: 5px 80px;
   @media (max-width: 940px) {
     margin: 0;
+    margin-top: 0;
     padding: 10px;
   }
 `;

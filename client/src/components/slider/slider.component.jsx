@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 
@@ -8,6 +7,8 @@ import ProductCard from "../product-card/product-card.component";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { SliderDiv, OuterDiv } from "./slider.styles";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -41,32 +42,88 @@ function SamplePrevArrow(props) {
   );
 }
 
-const SliderComponent = () => {
+const SliderComponent = ({ itemCategory }) => {
   const category = useSelector(selectCategoriesMap);
 
   const settings = {
     dots: true,
-    infinite: true,
     speed: 500,
     slidesToShow: 4,
-    swipeToSlide: true,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
     nextArrow: <SamplePrevArrow />,
     prevArrow: <SampleNextArrow />,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1355,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1070,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 655,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 611,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 465,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 415,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
   };
 
   return (
-    <Fragment>
-      <h1>Trending in Bolts-Nuts and Gauges</h1>
-      <Slider {...settings}>
-        {category["bolts-nuts"].map((product) => (
-          <ProductCard product={product} key={product.id}></ProductCard>
-        ))}
-        {category["gauges"].map((product) => (
-          <ProductCard product={product} key={product.id}></ProductCard>
-        ))}
-      </Slider>
-    </Fragment>
+    <OuterDiv>
+      <SliderDiv>
+        <Slider {...settings}>
+          {itemCategory.map((cat) =>
+            category[cat].map((product) => (
+              <div style={{ margin: "auto" }}>
+                <ProductCard product={product} key={product.id}></ProductCard>
+              </div>
+            ))
+          )}
+        </Slider>
+      </SliderDiv>
+    </OuterDiv>
   );
 };
 

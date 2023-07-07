@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import ProductCard from "../../components/product-card/product-card.component";
 import CategoryButtons from "../../components/category-buttons/category-buttons.component";

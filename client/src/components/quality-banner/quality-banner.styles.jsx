@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const BannerContainer = styled.div`
   display: flex;
   width: 100%;
+  margin-top: 50px;
   margin-bottom: 50px;
   height: 500px;
   flex-wrap: wrap;
@@ -10,7 +11,7 @@ export const BannerContainer = styled.div`
   @media (max-width: 940px) {
     margin: 0 20px;
     width: auto;
-    background-image: url("https://blog.thomasnet.com/hubfs/1MARCOMM/Blog/2018/May/Manufacturing%20Quality%20Control.jpg");
+    background-image: url("https://images.unsplash.com/photo-1648113139950-4ea1237f6d84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
   }
 `;
 
@@ -23,7 +24,7 @@ export const TextContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width: 940px) {
-    background-image: url("https://blog.thomasnet.com/hubfs/1MARCOMM/Blog/2018/May/Manufacturing%20Quality%20Control.jpg");
+    background-image: url("https://images.unsplash.com/photo-1648113139950-4ea1237f6d84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
   }
 `;
 
@@ -65,7 +66,7 @@ export const ContactButton = styled.button`
 `;
 
 export const ImageContainer = styled.div`
-  background-image: url("https://blog.thomasnet.com/hubfs/1MARCOMM/Blog/2018/May/Manufacturing%20Quality%20Control.jpg");
+  background-image: url("https://images.unsplash.com/photo-1648113139950-4ea1237f6d84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
   background-size: cover;
   background-position: center;
   flex: 1;

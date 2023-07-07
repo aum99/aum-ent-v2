@@ -1,31 +1,31 @@
 import { useNavigate } from "react-router-dom";
-
 import {
   BannerContainer,
   TextContainer,
   ImageContainer,
   TextBox,
   ContactButton,
-} from "./custom-banner.styles";
+} from "./quality-banner.styles";
 
-const CustomBaner = () => {
+const QualityBanner = () => {
   const navigate = useNavigate();
   const NavigateToContact = () => navigate("/contact");
+
   return (
     <BannerContainer>
+      <ImageContainer />
       <TextContainer>
         <TextBox>
-          <h1>Get Custom Products</h1>
+          <h1>Quality Assured Products</h1>
           <p>
-            Send us the drawing and your prefered dimensions will talk to our
-            team and contact you
+            Experience uncompromising quality and elevate your satisfaction with
+            our exceptional products
           </p>
           <ContactButton onClick={NavigateToContact}>Contact Us</ContactButton>
         </TextBox>
       </TextContainer>
-      <ImageContainer />
     </BannerContainer>
   );
 };
 
-export default CustomBaner;
+export default QualityBanner;

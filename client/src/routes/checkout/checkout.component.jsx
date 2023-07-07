@@ -22,6 +22,7 @@ import {
   CartTotal,
   CheckoutButton,
   FormContainer,
+  EmptyMessage,
 } from "./checkout.styles";
 import { useState } from "react";
 
@@ -91,9 +92,13 @@ const Checkout = () => {
       <OrderSummaryContainer>
         <Header>Order Summary</Header>
         <ItemsContainer>
-          {cartItems.map((cartItem) => (
-            <CartItem key={cartItem.id} item={cartItem}></CartItem>
-          ))}
+          {cartItems.length > 0 ? (
+            cartItems.map((cartItem) => (
+              <CartItem key={cartItem.id} item={cartItem}></CartItem>
+            ))
+          ) : (
+            <EmptyMessage>Your cart is empty!</EmptyMessage>
+          )}
         </ItemsContainer>
         <CartTotal>Rs. {total}</CartTotal>
       </OrderSummaryContainer>

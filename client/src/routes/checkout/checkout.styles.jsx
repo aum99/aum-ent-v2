@@ -22,13 +22,25 @@ export const DeliveryInfoContainer = styled.div`
 
 export const OrderSummaryContainer = styled.div`
   width: 40%;
-  max-height: 80vh;
+  height: 80vh;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   @media (max-width: 750px) {
     width: 100%;
+    height: 50vh;
     margin-top: 20px;
+  }
+`;
+
+export const EmptyMessage = styled.div`
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 750px) {
+    height: 30vh;
   }
 `;
 

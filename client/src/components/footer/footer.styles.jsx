@@ -76,12 +76,21 @@ export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 600px;
+  @media (max-width: 615px) {
+    width: 500px;
+  }
+  @media (max-width: 505px) {
+    width: 350px;
+  }
 `;
 
 export const SocialLink = styled(Link)`
   text-decoration: none;
   font-size: larger;
   color: white;
-  margin: 15px;
+  margin: auto;
+  @media (max-width: 615px) {
+    font-size: medium;
+  }
 `;
