@@ -32,6 +32,20 @@ export const InputGroup = styled.div`
   align-items: center;
 `;
 
+export const InputSubmit = styled.button`
+  min-height: 50px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    color: #212529;
+  }
+`;
+
 export const Input = styled.input`
   min-height: 48px;
   max-width: 150px;
@@ -43,22 +57,8 @@ export const Input = styled.input`
   background-color: transparent;
   &:focus,
   :focus-visible {
-    border-color: #3898ec;
+    border-color: #fff;
     outline: none;
-  }
-`;
-
-export const InputSubmit = styled.input`
-  min-height: 50px;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 0 6px 6px 0;
-  background-color: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  &:hover {
-    background-color: #5e5dcd;
   }
 `;
 

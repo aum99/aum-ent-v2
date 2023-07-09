@@ -79,7 +79,9 @@ const Navigation = () => {
               Products
             </NavLink>
             <NavLink>About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" onClick={toggleMenu}>
+              Contact
+            </NavLink>
           </NavMenuBlock>
         </NavMenuContainer>
       ) : (

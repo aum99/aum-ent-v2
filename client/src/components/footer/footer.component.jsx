@@ -23,7 +23,7 @@ const Footer = () => {
             name="Email"
             autoComplete="off"
           />
-          <InputSubmit value="Subscribe" type="submit" />
+          <InputSubmit type="submit">Subscribe</InputSubmit>
         </InputGroup>
       </NewsLetterContainer>
       <SocialsContainer>
