@@ -1,12 +1,12 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
+import { useDispatch } from "react-redux";
+import { fetchCategoriesStart } from "../../store/categories/categories.action";
 
 import { selectCategoriesMap } from "../../store/categories/categories.selector";
 
 import ProductCard from "../product-card/product-card.component";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import { SliderDiv, OuterDiv } from "./slider.styles";
 
@@ -44,7 +44,6 @@ function SamplePrevArrow(props) {
 
 const SliderComponent = ({ itemCategory }) => {
   const category = useSelector(selectCategoriesMap);
-
   const settings = {
     dots: true,
     speed: 500,
@@ -114,11 +113,9 @@ const SliderComponent = ({ itemCategory }) => {
     <OuterDiv>
       <SliderDiv>
         <Slider {...settings}>
-          {itemCategory.map((cat) =>
-            category[cat].map((product) => (
-              <div style={{ margin: "auto" }}>
-                <ProductCard product={product} key={product.id}></ProductCard>
-              </div>
+          {itemCategory.map((item) =>
+            category[item]?.map((product) => (
+              <ProductCard product={product} key={product.id}></ProductCard>
             ))
           )}
         </Slider>

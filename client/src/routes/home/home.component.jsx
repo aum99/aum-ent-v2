@@ -1,4 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+import { fetchCategoriesStart } from "../../store/categories/categories.action";
 
 import CategoryGrid from "../../components/category-grid/category-grid.components";
 import CustomBaner from "../../components/custom-banner/custom-banner.components";
@@ -8,6 +11,10 @@ import QualityBanner from "../../components/quality-banner/quality-banner.compon
 import { SliderHead } from "./home.styles";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategoriesStart());
+  }, []);
   return (
     <Fragment>
       <CategoryGrid />
