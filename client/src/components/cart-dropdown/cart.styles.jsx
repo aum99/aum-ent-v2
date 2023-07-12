@@ -26,7 +26,7 @@ export const ProductsContainer = styled.div`
   overflow: scroll;
 `;
 
-export const CheckoutButton = styled(Link)`
+export const CheckoutButton = styled.button`
   border: 1px solid black;
   background-color: #000000;
   color: #ffffff;

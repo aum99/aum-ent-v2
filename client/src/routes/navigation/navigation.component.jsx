@@ -49,7 +49,7 @@ const Navigation = () => {
         <NavLogo onClick={navigateToHome} />
         <NavLinksContainer>
           <NavLink to="/products">Products</NavLink>
-          <NavLink>About</NavLink>
+          <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </NavLinksContainer>
         <NavbarCtaContainer>
@@ -78,7 +78,9 @@ const Navigation = () => {
             <NavLink to="/products" onClick={toggleMenu}>
               Products
             </NavLink>
-            <NavLink>About</NavLink>
+            <NavLink to="/about" onClick={toggleMenu}>
+              About
+            </NavLink>
             <NavLink to="/contact" onClick={toggleMenu}>
               Contact
             </NavLink>

@@ -5,23 +5,34 @@ export const ProductCardContainer = styled.div`
   margin: 10px;
   margin-bottom: 25px;
   display: flex;
+  height: 440px;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 8px;
   border: 2px solid #adb5bd;
-
+  background: linear-gradient(#fff, #fff 50%, #212529 50%, #212529);
+  background-size: 100% 200%;
+  transition: background 0.3s;
+  overflow: hidden;
   img {
     width: 270px;
-    height: 60%;
-    object-fit: cover;
+    height: 55%;
     margin-bottom: 5px;
+    background-size: cover;
+    background-position: center;
   }
   &:hover {
     border-color: #000;
+    background-position: 100% 100%;
+    img {
+      transform: scale(1.07);
+      transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
   }
   @media (max-width: 655px) {
     width: 160px;
-    height: 230px;
+    height: 290px;
     margin: 10px 0;
     img {
       width: 150px;
@@ -29,7 +40,7 @@ export const ProductCardContainer = styled.div`
   }
   @media (max-width: 415px) {
     width: 120px;
-    height: 210px;
+    height: 290px;
     margin: 7px 0;
     padding: 8px;
     img {
@@ -42,6 +53,9 @@ export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ${ProductCardContainer}:hover & {
+    color: #fff;
+  }
 `;
 
 export const Name = styled.span`
@@ -50,6 +64,9 @@ export const Name = styled.span`
   margin: 10px 0;
   @media (max-width: 655px) {
     font-size: small;
+  }
+  ${ProductCardContainer}:hover & {
+    color: #fff;
   }
 `;
 
@@ -69,10 +86,13 @@ export const ProductDescription = styled.span`
   @media (max-width: 655px) {
     font-size: x-small;
   }
+  ${ProductCardContainer}:hover & {
+    color: #fff;
+  }
 `;
 
 export const AddButton = styled.button`
-  background-color: #000000;
+  background-color: #212529;
   display: flex;
   margin-top: 8px;
   color: #ffffff;

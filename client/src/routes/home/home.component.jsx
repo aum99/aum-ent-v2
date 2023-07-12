@@ -19,8 +19,8 @@ const Home = () => {
     <Fragment>
       <CategoryGrid />
       <CustomBaner />
-      <SliderHead>Trending in Bolts-Nuts and Gauges</SliderHead>
-      <SliderComponent itemCategory={["bolts-nuts", "gauges"]} />
+      <SliderHead>Trending in Elbows and Nuts</SliderHead>
+      <SliderComponent itemCategory={["elbows", "nuts"]} />
       <QualityBanner />
     </Fragment>
   );

@@ -5,45 +5,45 @@ import GridItem from "../grid-item/grid-item.component";
 const categories = [
   {
     id: 1,
-    title: "Bolts & Nuts",
+    title: "Nuts",
     imageurl:
-      "https://www.stockinitaly.com/wp-content/uploads/2019/03/bigstock-bolts-nuts-screws-54640064-e1446090357363.jpg",
-    route: "products/bolts-nuts",
+      "https://res.cloudinary.com/damon753y/image/upload/v1689181319/IMG_4856_lxks6e.png",
+    route: "products/nuts",
   },
   {
     id: 2,
-    title: "Cnc Equipment",
+    title: "Elbows",
     imageurl:
-      "https://geomiq.com/wp-content/uploads/2021/03/Untitled-design-10-scaled.jpg",
-    route: "products/cnc-equipment",
+      "https://res.cloudinary.com/damon753y/image/upload/v1689181328/IMG_4869_ybkgsu.png",
+    route: "products/elbows",
   },
   {
     id: 3,
-    title: "Gauges",
+    title: "Oil Distributors",
     imageurl:
-      "https://media.istockphoto.com/id/525501302/photo/row-of-industrial-high-pressure-gas-gauge-meters.jpg?s=612x612&w=0&k=20&c=7hGMHhsVxf7r8n7lHHh8aINJlb8dmDyOGrR9b7R8rn0=",
-    route: "products/gauges",
+      "https://res.cloudinary.com/damon753y/image/upload/v1689181328/IMG_4878_hsqxv5.png",
+    route: "products/oil%20distributors",
   },
   {
     id: 4,
-    title: "Pistons",
+    title: "Plugs",
     imageurl:
-      "https://www.bar-tek-tuning.com/cdn-cgi/image/fit=scale-down,quality=50,sharpen=1,format=auto,width=1920/https://www.bar-tek-tuning.com/media/17/a5/ae/1678805759/22-kolben-2000x800px.webp",
-    route: "products/pistons",
+      "https://res.cloudinary.com/damon753y/image/upload/v1689181345/IMG_4882_axr8hu.png",
+    route: "products/plugs",
   },
   {
     id: 5,
-    title: "Precision Works",
+    title: "Shaft Sleeves",
     imageurl:
-      "https://5.imimg.com/data5/GM/CQ/AS/ANDROID-5540148/product-jpeg-500x500.png",
-    route: "products/precision-job-works",
+      "https://res.cloudinary.com/damon753y/image/upload/v1689181337/IMG_4889_mwk6px.png",
+    route: "products/shaft%20sleeve",
   },
   {
     id: 6,
-    title: "Valves",
+    title: "Studs",
     imageurl:
-      "https://www.market-prospects.com//storage/images/675_1200x675.jpg",
-    route: "products/valves",
+      "https://res.cloudinary.com/damon753y/image/upload/v1689181328/IMG_4868_jvwsm5.png",
+    route: "products/studs",
   },
 ];
 

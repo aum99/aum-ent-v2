@@ -1,13 +1,33 @@
 import { styled } from "styled-components";
 
+export const BackgroundImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: ${({ imageurl }) => `url(${imageurl})`};
+  filter: brightness(80%);
+  &:hover {
+    filter: brightness(100%);
+  }
+`;
+
 export const CategoryContainer = styled.div`
   height: 300px;
   flex-basis: 31%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
   border: 1px solid black;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    & ${BackgroundImage} {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  }
   @media (max-width: 1142px) {
     height: 200px;
     flex-basis: 30%;
@@ -21,19 +41,6 @@ export const CategoryContainer = styled.div`
   }
   @media (max-width: 430px) {
     flex-basis: 43%;
-  }
-`;
-
-export const BackgroundImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-image: ${({ imageurl }) => `url(${imageurl})`};
-  filter: brightness(60%);
-  opacity: 0.8;
-  &:hover {
-    filter: brightness(40%);
   }
 `;
 

@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import {
   selectIsCartOpen,
   selectCartItems,
 } from "../../store/cart/cart.selector";
 import { setIsCartOpen } from "../../store/cart/cart.action";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import DropdownItem from "../dropdown-item/dropdown-item.component";
 
@@ -17,9 +20,25 @@ import {
 
 const CartDropdown = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isCartOpen = useSelector(selectIsCartOpen);
   const cartItems = useSelector(selectCartItems);
+  const isUserLoggedIn = useSelector(selectCurrentUser);
   const ToggleCart = () => {
+    if (isUserLoggedIn) {
+      navigate("/checkout");
+    } else {
+      toast.error("Please sign-in to checkout!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
     dispatch(setIsCartOpen(!isCartOpen));
   };
 
@@ -34,9 +53,7 @@ const CartDropdown = () => {
           <EmptyMessage>Nothing in cart yet</EmptyMessage>
         )}
       </ProductsContainer>
-      <CheckoutButton to="/checkout" onClick={ToggleCart}>
-        Checkout
-      </CheckoutButton>
+      <CheckoutButton onClick={ToggleCart}>Checkout</CheckoutButton>
     </CartDropdownContainer>
   );
 };

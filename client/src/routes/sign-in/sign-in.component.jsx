@@ -20,6 +20,8 @@ import {
 } from "./sign-in.styles";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const defaultFormFields = {
   email: "",
@@ -100,6 +102,18 @@ const SignIn = () => {
           <SignUp to="/sign-up">Create an account</SignUp>
         </AlternateSpan>
       </SignInContainer>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </Container>
   );
 };

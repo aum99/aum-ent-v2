@@ -20,6 +20,7 @@ export const NavbarContainer = styled.div`
 export const NavLogo = styled(Logo)`
   width: 70px;
   height: 70px;
+  margin-left: 15px;
   cursor: pointer;
   border-radius: 50px !important;
   @media (max-width: 940px) {
@@ -56,6 +57,20 @@ export const NavLink = styled(Link)`
   color: black;
   display: flex;
   align-items: center;
+  --s: 0.1em; /* the thickness of the line */
+  --c: #1095c1; /* the color */
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, #000 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+  &:hover {
+    --_p: 100%;
+  }
   @media (max-width: 940px) {
     padding: 20px 0;
     font-size: 20px;

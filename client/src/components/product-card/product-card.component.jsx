@@ -14,7 +14,7 @@ import {
 import { toast } from "react-toastify";
 
 const ProductCard = ({ product }) => {
-  const { name, price, imageUrl } = product;
+  const { name, price, imageUrl, description } = product;
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
         <Name>{name}</Name>
         <Price>Rs. {price}</Price>
       </ProductInfo>
-      <ProductDescription>Lorem ipsum desc for prod</ProductDescription>
+      <ProductDescription>{description}</ProductDescription>
       <AddButton onClick={addProduct}>Add to Cart</AddButton>
     </ProductCardContainer>
   );

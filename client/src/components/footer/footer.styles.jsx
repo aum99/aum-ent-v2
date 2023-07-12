@@ -39,6 +39,7 @@ export const InputSubmit = styled.button`
   border-radius: 0 6px 6px 0;
   background-color: #fff;
   font-size: 15px;
+  color: #000;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   &:hover {
